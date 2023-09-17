@@ -49,6 +49,7 @@
 <script>
 import { onBeforeUnmount, onMounted, reactive } from 'vue';
 export default {
+    name: 'Header',
     setup() {
         const state = reactive({
             menuItems: [
