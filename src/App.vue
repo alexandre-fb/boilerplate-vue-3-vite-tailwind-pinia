@@ -1,34 +1,29 @@
-
 <template>
-  <router-view />
+  <!-- define o layot a partir das rotas -->
+  <component :is="route.meta.layout">
+    <router-view />
+  </component>
 </template>
 
-<script setup>
+<script>
 import { RouterView } from "vue-router";
+import { useRouter, useRoute } from 'vue-router'
+import LayoutDefault from "./layouts/LayoutDefault.vue";
 
-// import { watch } from 'vue'
-// import { useRouter, useRoute } from 'vue-router'
+export default {
+  components: {
+    LayoutDefault
+  },
+  setup() {
+    const route = useRoute()
+    console.log(route.meta.layout)
 
-// setup() {
-//   const router = useRouter()
-//   const route = useRoute()
-
-//   watch(() => route.path, async () => {
-//     if (route.meta.hasAuth) {
-//       const token = window.localStorage.getItem('token')
-//       if(!token) {
-//         router.push({ name: login})
-//         return
-//       }
-
-//       const { data } = await ServiceWorkerRegistration.users.getMe()
-//       setCurrentUser(data)
-//     }
-//   })
-// }
-
+    return {
+      route,
+      RouterView
+    }
+  }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
