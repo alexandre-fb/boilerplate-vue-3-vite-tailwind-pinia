@@ -1,21 +1,25 @@
 <template>
-    <header>
-        <Header />
-    </header>
-    <main class="mt-[60px]">
-        <slot />
-    </main>
-    <footer>
-        Footer
-    </footer>
+    <div class="flex flex-col justify-between bg-black w-full min-h-screen" >
+        <header>
+            <Header />
+        </header>
+        <main class="flex-1 mt-[60px]">
+            <slot />
+        </main>
+        <footer>
+            <Footer />
+        </footer>
+    </div>
 </template>
 
 <script>
 import Header from '../components/Header/index.vue'
+import Footer from '../components/Footer/index.vue'
 export default {
     name: 'LayoutDefault',
     components: {
-        Header
+        Header,
+        Footer
     },
     setup() {
 
