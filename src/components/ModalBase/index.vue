@@ -9,7 +9,7 @@
 
             <!-- content container -->
             <div 
-                class="relative flex flex-col p-4 w-[90%] overflow-x-hidden bg-white h-fit min-h-[200px]" 
+                class="relative flex flex-col p-4 w-[90%] overflow-x-hidden bg-white h-fit min-h-[200px] max-h-[90%]" 
                 :class="maxWidth"
                 v-motion-slide-bottom
             >
