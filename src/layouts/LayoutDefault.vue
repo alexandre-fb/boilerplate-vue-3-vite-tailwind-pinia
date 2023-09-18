@@ -1,9 +1,9 @@
 <template>
-    <div class="flex flex-col justify-between bg-black w-full min-h-screen" >
+    <div class="flex flex-col justify-between bg-black w-full min-h-screen overflow-x-hidden" >
         <header>
             <Header />
         </header>
-        <main class="flex-1 mt-[60px]">
+        <main class="flex flex-col flex-1 mt-[60px]">
             <slot />
         </main>
         <footer>

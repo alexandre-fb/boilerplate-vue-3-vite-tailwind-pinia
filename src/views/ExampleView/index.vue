@@ -1,15 +1,31 @@
 <template>
-  <h1 class="text-red-500 text-2xl bg-black" ref="title" v-motion-fade>
-    Home
-  </h1>
-  <h2 v-motion="motionShake" class="w-min">
-    FrontEnd
-  </h2>
+  <div class="flex-1 flex flex-col gap-14 py-10 items-center">
 
-  <button @click="toogleModal('open')">Abir Modal</button>
-  <ModalExample :isActive="state.isActive" @closeModalClick="toogleModal('close')" />
+    <!-- Titulo -->
+    <div class="flex flex-col items-center gap-4">
+      <h2 class="text-white text-2xl" v-motion-fade>
+        Boilerplate
+      </h2>
+      <h2 v-motion="motionShake" class="text-5xl text-white">
+        FrontEnd
+      </h2>
+    </div>
 
-  <SliderExample />
+    <div class="w-full max-w-7xl border border-gray-800"></div>
+  
+    <!-- Modal -->
+    <div>
+      <button @click="toogleModal('open')" class="text-white bg-blue-500 py-2 px-4 rounded-md ">Exemplo Modal</button>
+      <ModalExample :isActive="state.isActive" @closeModalClick="toogleModal('close')" />
+    </div>
+
+    <div class="w-full max-w-7xl border border-gray-800"></div>
+  
+    <!-- Slider -->
+    <div class="w-full max-w-3xl">
+      <SliderExample />
+    </div>
+  </div>
 </template>
 
 <script>
